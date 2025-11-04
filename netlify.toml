@@ -1,0 +1,35 @@
+[build]
+  command = "pnpm build"
+  functions = "server"
+  publish = "client/dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+  PNPM_VERSION = "8"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production]
+  command = "pnpm build"
+  environment = { NODE_ENV = "production" }
+
+[context.deploy-preview]
+  command = "pnpm build"
+
+[context.branch-deploy]
+  command = "pnpm build"
+
+[env]
+  DATABASE_URL = ""
+  JWT_SECRET = ""
+  VITE_APP_TITLE = "Restaurant ERP"
+  VITE_APP_LOGO = ""
+  NODE_ENV = "production"

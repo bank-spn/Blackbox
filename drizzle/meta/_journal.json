@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1762286278069,
+      "tag": "0000_marvelous_purifiers",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1762286375157,
+      "tag": "0001_breezy_james_howlett",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1762288883269,
+      "tag": "0002_gifted_ultron",
+      "breakpoints": true
+    }
+  ]
+}

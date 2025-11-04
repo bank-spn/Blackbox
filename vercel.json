@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "buildCommand": "pnpm build",
+  "devCommand": "pnpm dev",
+  "installCommand": "pnpm install",
+  "framework": "vite",
+  "env": {
+    "DATABASE_URL": {
+      "description": "PostgreSQL/Supabase connection string"
+    },
+    "JWT_SECRET": {
+      "description": "Secret key for JWT signing"
+    },
+    "VITE_APP_TITLE": {
+      "description": "Application title",
+      "default": "Restaurant ERP"
+    },
+    "VITE_APP_LOGO": {
+      "description": "Application logo URL"
+    },
+    "NODE_ENV": {
+      "default": "production"
+    }
+  },
+  "functions": {
+    "server/**": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/.*",
+      "dest": "/server/index.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/client/dist/index.html"
+    }
+  ]
+}
